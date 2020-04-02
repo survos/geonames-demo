@@ -1,17 +1,30 @@
 # Geonames Demo
 
+Loads the key tables from Geonames (www.geonames.org), using bordeaux/geoname-bundle, and then viable via Easy Admin.
+
+Requirements:
+
+* Symfony CLI 
+* PHP 7.3+
+
 ## Run Locally
 
-## Steps to Recreate This Demo 
+Super-fast to set up!  BUT kinda slow to load, depending on your computer and connection.
 
-Because u
+```bash
+git clone git@github.com:survos/geonames-demo && cd geonames-demo
+composer install
+```
 
-composer config repositories.git-survos-geonames-bundle '{"type": "vcs", "url": "https://github.com/survos/geonames-bundle.git"}'
+By default, this demo uses a sqlite database, if you use postgres or mysql configure DATABASE_URL in .env.local.  Otherwise, just make sure you have the sqlite extension loaded in PHP if you get an error in the next step.
 
-echo "DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db" >> .env.local
+```bash
+bin/console doctrine:schema:update --force
+ bin/console bordeux:geoname:import -a http://download.geonames.org/export/dump/US.zip --timezones=0 --env=prod
+symfony server:start 
+```
 
+Note: the timezones=0 is a flag to NOT load timezones, which disappeared on April 2, 2020.  --env=prod disables some logging and speeds it up slightly.  Use -a to select a country for downloadiong, or remove that altogether to load everything (about 360M download).
 
-bin/console doctrine:schema:update --force --dump-sql
-bin/console doctrine:fixtures:load -n
-bin/console bordeux:geoname:import -a http://download.geonames.org/export/dump/US.zip
+Open your browser and you'll be able to search the various geonames tables.
 
