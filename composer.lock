@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/survos/geoname-bundle.git",
-                "reference": "8ce19bf787b66c9584c5aee853392c98788ce875"
+                "reference": "01b4339cda37c861cd10800eb86fe1fc5cd9f0ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/survos/geoname-bundle/zipball/8ce19bf787b66c9584c5aee853392c98788ce875",
-                "reference": "8ce19bf787b66c9584c5aee853392c98788ce875",
+                "url": "https://api.github.com/repos/survos/geoname-bundle/zipball/01b4339cda37c861cd10800eb86fe1fc5cd9f0ce",
+                "reference": "01b4339cda37c861cd10800eb86fe1fc5cd9f0ce",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
             "support": {
                 "source": "https://github.com/survos/geoname-bundle/tree/easyadmin"
             },
-            "time": "2020-03-31T18:22:06+00:00"
+            "time": "2020-04-02T20:17:48+00:00"
         },
         {
             "name": "doctrine/annotations",
