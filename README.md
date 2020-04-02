@@ -1,10 +1,12 @@
 # Geonames Demo
 
-Loads the key tables from Geonames (www.geonames.org), using bordeaux/geoname-bundle, and then viable via Easy Admin.
+Loads the key tables from Geonames (www.geonames.org), using 
+[bordeaux/geoname-bundle](https://github.com/bordeux/geoname-bundle)
+and then visible via Easy Admin.
 
 Requirements:
 
-* Symfony CLI 
+* [Symfony Local Server](https://symfony.com/doc/current/setup/symfony_server.html)
 * PHP 7.3+
 
 ## Run Locally
@@ -24,7 +26,11 @@ bin/console doctrine:schema:update --force
 symfony server:start 
 ```
 
-Note: the timezones=0 is a flag to NOT load timezones, which disappeared on April 2, 2020.  --env=prod disables some logging and speeds it up slightly.  Use -a to select a country for downloadiong, or remove that altogether to load everything (about 360M download).
+Note: the timezones=0 is a flag to NOT load timezones, which disappeared on April 2, 2020.  --env=prod disables some logging and speeds it up slightly.  Use -a to select a country for downloading, or remove that altogether to load everything (about 360M download).
 
 Open your browser and you'll be able to search the various geonames tables.
+
+## Note
+
+Actually, it's using the [survos fork of the geoname bundle](https://github.com/survos/geoname-bundle).
 
