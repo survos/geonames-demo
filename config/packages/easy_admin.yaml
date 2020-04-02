@@ -1,0 +1,57 @@
+easy_admin:
+    site_name: Geonames
+
+    disabled_actions: ['delete', 'edit', 'new']
+    list:
+        actions: ['show']
+    design:
+        menu:
+            - { entity: Country, icon: 'fas fa-map-marker' }
+            - { entity: GeoName, icon: 'fas fa-map-marker' }
+
+            - { label: Administrative, icon: 'fas fa-map-marker',children: [Geo_Admin1, Geo_Admin2, Geo_Admin3] }
+
+            - { label: Feature, icon: 'fas fa-map-marker',children: [Geo_FeatureA, Geo_FeatureV] }
+
+    entities:
+        Administrative:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\Administrative
+
+        Country:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\Country
+
+        Timezone:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\Timezone
+
+        GeoName:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\GeoName
+            list:
+                filters: ['asciiName', 'featureClass', 'featureCode']
+
+
+        Geo_FeatureA:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\GeoName
+            list:
+                dql_filter: "entity.featureClass = 'A'"
+        Geo_FeatureV:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\GeoName
+            list:
+                dql_filter: "entity.featureClass = 'V'"
+                # you can also use container parameters inside the filters
+                # dql_filter: 'entity.budget <= %customers.budget_threshold%'
+
+        Geo_All:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\GeoName
+
+        Geo_Admin1:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\GeoName
+            list:
+                dql_filter: "entity.featureCode = 'ADM1'"
+        Geo_Admin2:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\GeoName
+            list:
+                dql_filter: "entity.featureCode = 'ADM2'"
+        Geo_Admin3:
+            class: Bordeux\Bundle\GeoNameBundle\Entity\GeoName
+            list:
+                dql_filter: "entity.featureCode = 'ADM3'"
