@@ -13,7 +13,7 @@ bin/console bordeux:geoname:import --countries
 #bin/console doctrine:migrations:diff  --configuration config/migrations/app_migrations.yaml  --em=default
 #bin/console doctrine:migrations:migrate  --configuration config/migrations/app_migrations.yaml  --em=default -n
 
-bin/console bordeux:geoname:import --skip-geoname
+bin/console bordeux:geoname:import
 
 #bin/console doctrine:schema:update --dump-sql --em=default
 #bin/console make:migration
