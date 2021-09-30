@@ -7,7 +7,7 @@ and then visible via Easy Admin.
 Requirements:
 
 * [Symfony Local Server](https://symfony.com/doc/current/setup/symfony_server.html)
-* PHP 7.3+
+* PHP 8.0 +
 
 ## Run Locally
 
@@ -22,7 +22,7 @@ By default, this demo uses a sqlite database, if you use postgres or mysql confi
 
 ```bash
 bin/console doctrine:schema:update --force
- bin/console bordeux:geoname:import -a http://download.geonames.org/export/dump/US.zip --timezones=0 --env=prod
+bin/console bordeux:geoname:import -a http://download.geonames.org/export/dump/US.zip --timezones=0 --env=prod
 symfony server:start 
 ```
 
